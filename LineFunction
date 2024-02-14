@@ -1,0 +1,26 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Функция для вычисления длины шеи в зависимости от количества лет
+def neck_length(years):
+    return 5.66137 * years + 140.888
+
+# Генерация значений для графика (для промежутка от 0 до 10 лет с шагом 0.1)
+years = np.arange(0, 25, 0.1)
+neck_lengths = neck_length(years)
+
+# Нахождение длины шеи на отметке трёх лет
+neck_length_at_3_years = neck_length(3)
+
+# Построение графика
+plt.plot(years, neck_lengths, label='Длина шеи')
+plt.scatter(3, neck_length_at_3_years, color='red', label='Точка на 3 года')
+plt.xlabel('Количество лет')
+plt.ylabel('Длина шеи')
+plt.title('Зависимость длины шеи от количества лет')
+plt.legend()
+plt.grid(True)
+plt.ylim(70, None)  # Установка ограничения для оси Y от 70 до максимального значения
+plt.show()
+
+print(f"Длина шеи на отметке трёх лет: {neck_length_at_3_years}")
