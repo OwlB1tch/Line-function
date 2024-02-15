@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 def neck_length(years):
     return 5.66137 * years + 140.888
 
-# Генерация значений для графика (для промежутка от 0 до 10 лет с шагом 0.1)
+# Генерация значений для графика (для промежутка от 0 до 25 лет с шагом 0.1)
 years = np.arange(0, 25, 0.1)
 neck_lengths = neck_length(years)
 
